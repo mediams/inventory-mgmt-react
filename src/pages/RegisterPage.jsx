@@ -12,19 +12,23 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    e.preventDefault();
-    try {
-      const registerData = { name, email, password, phoneNumber };
-      await ApiService.registerUser(registerData);
-      setMessage("Registration Successfull");
-      navigate("/login");
-    } catch (error) {
-      showMessage(
-        error.response?.data?.message || "Error Registering a User: " + error
-      );
-      console.log(error);
-    }
-  };
+  e.preventDefault();
+  try {
+    const registerData = { name, email, password, phoneNumber };
+    await ApiService.registerUser(registerData);
+
+    // Передаём flash-сообщение в state при переходе
+    navigate("/login", {
+      state: {
+        flash: { type: "success", text: "Регистрация прошла успешно. Войдите в аккаунт." }
+      },
+      replace: true, // чтобы по back не повторялось
+    });
+  } catch (error) {
+    showMessage(error.response?.data?.message || "Ошибка регистрации: " + error);
+    console.log(error);
+  }
+};
 
   const showMessage = (msg) => {
     setMessage(msg);
