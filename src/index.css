@@ -29,10 +29,6 @@
 
 /* ===== Красивый фон страницы ===== */
 body{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center; /* по горизонтали */
-  align-items: center;     /* по вертикали */
   min-height:100dvh;
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(45,212,191,.12), transparent 60%),

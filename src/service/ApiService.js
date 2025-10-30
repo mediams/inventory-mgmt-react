@@ -168,14 +168,14 @@ export default class ApiService {
 
     /**CATEGOTY EDNPOINTS */
     static async createCategory(category) {
-        const response = await axios.post(`${this.BASE_URL}/categories/add`, category, {
+        const response = await axios.post(`${this.BASE_URL}/categories`, category, {
             headers: this.getHeader()
         })
         return response.data;
     }
 
     static async getAllCategory() {
-        const response = await axios.get(`${this.BASE_URL}/categories/all`, {
+        const response = await axios.get(`${this.BASE_URL}/categories`, {
             headers: this.getHeader()
         })
         return response.data;
@@ -189,14 +189,14 @@ export default class ApiService {
     }
 
     static async updateCategory(categoryId, categoryData) {
-        const response = await axios.put(`${this.BASE_URL}/categories/update/${categoryId}`, categoryData, {
+        const response = await axios.put(`${this.BASE_URL}/categories/${categoryId}`, categoryData, {
             headers: this.getHeader()
         })
         return response.data;
     }
 
     static async deleteCategory(categoryId) {
-        const response = await axios.delete(`${this.BASE_URL}/categories/delete/${categoryId}`, {
+        const response = await axios.delete(`${this.BASE_URL}/categories/${categoryId}`, {
             headers: this.getHeader()
         })
         return response.data;
