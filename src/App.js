@@ -6,6 +6,8 @@ import LoginPage from "./pages/LoginPage";
 import CategoryPage from "./pages/CategoryPage";
 import SupplierPage from "./pages/SupplierPage";
 import AddEditSupplierPage_ from "./pages/AddEditSupplierPage_";
+import ProductPage from "./pages/ProductPage";
+import AddEditProductPage from "./pages/AddEditProductPage"; 
 
 function App() {
   return (
@@ -15,11 +17,15 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
 
         {/* ADMIN ROUTES */}
-        <Route path="/categories" element={<AdminRoute element={<CategoryPage/>}/>}/>
-        <Route path="/suppliers" element={<AdminRoute element={<SupplierPage/>}/>}/>
-        <Route path="/add-supplier" element={<AdminRoute element={<AddEditSupplierPage_/>}/>}/>
-        <Route path="/edit-supplier/:supplierId" element={<AdminRoute element={<AddEditSupplierPage_/>}/>}/>
+        <Route path="/categories" element={<AdminRoute element={<CategoryPage />} />} />
+        <Route path="/suppliers" element={<AdminRoute element={<SupplierPage />} />} />
+        <Route path="/add-supplier" element={<AdminRoute element={<AddEditSupplierPage_ />} />} />
+        <Route path="/edit-supplier/:supplierId" element={<AdminRoute element={<AddEditSupplierPage_ />} />} />
 
+        {/* Продукты */}
+        <Route path="/add-products" element={<AdminRoute element={<AddEditProductPage />} />} /> 
+        <Route path="/edit-product/:productId" element={<AdminRoute element={<AddEditProductPage />} />} />
+        <Route path="/products" element={<AdminRoute element={<ProductPage />} />} />
       </Routes>
     </Router>
   );

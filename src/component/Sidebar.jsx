@@ -34,7 +34,7 @@ const Sidebar = () => {
 
         {isAdmin && (
           <li>
-            <Link to="/product">Product</Link>
+            <Link to="/products">Product</Link>
           </li>
         )}
 

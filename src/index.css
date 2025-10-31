@@ -886,6 +886,7 @@ button[type="submit"]:active{ transform: translateY(1px); }
 /* Product image styles */
 
 .product-image {
+  display:block;
   width: 100%;
   height: 130px;
   object-fit: cover;

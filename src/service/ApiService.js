@@ -136,7 +136,7 @@ export default class ApiService {
     }
 
     static async getAllProducts() {
-        const response = await axios.get(`${this.BASE_URL}/products/all`, {
+        const response = await axios.get(`${this.BASE_URL}/products`, {
             headers: this.getHeader()
         });
         return response.data;
@@ -158,7 +158,7 @@ export default class ApiService {
     }
 
     static async deleteProduct(productId) {
-        const response = await axios.delete(`${this.BASE_URL}/products/delete/${productId}`, {
+        const response = await axios.delete(`${this.BASE_URL}/products/${productId}`, {
             headers: this.getHeader()
         });
         return response.data;
