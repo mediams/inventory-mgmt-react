@@ -205,14 +205,14 @@ export default class ApiService {
 
     /**Supplier EDNPOINTS */
     static async addSupplier(supplierData) {
-        const response = await axios.post(`${this.BASE_URL}/suppliers/add`, supplierData, {
+        const response = await axios.post(`${this.BASE_URL}/suppliers`, supplierData, {
             headers: this.getHeader()
         })
         return response.data;
     }
 
     static async getAllSuppliers() {
-        const response = await axios.get(`${this.BASE_URL}/suppliers/all`, {
+        const response = await axios.get(`${this.BASE_URL}/suppliers`, {
             headers: this.getHeader()
         })
         return response.data;
@@ -227,14 +227,14 @@ export default class ApiService {
     }
 
     static async updateSupplier(supplierId, supplierData) {
-        const response = await axios.put(`${this.BASE_URL}/suppliers/update/${supplierId}`, supplierData, {
+        const response = await axios.put(`${this.BASE_URL}/suppliers/${supplierId}`, supplierData, {
             headers: this.getHeader()
         })
         return response.data;
     }
 
     static async deleteSupplier(supplierId) {
-        const response = await axios.delete(`${this.BASE_URL}/suppliers/delete/${supplierId}`, {
+        const response = await axios.delete(`${this.BASE_URL}/suppliers/${supplierId}`, {
             headers: this.getHeader()
         })
         return response.data;
