@@ -22,7 +22,7 @@ const Sidebar = () => {
 
         {isAuth && (
           <li>
-            <Link to="/transaction">Transactions</Link>
+            <Link to="/transactions">Transactions</Link>
           </li>
         )}
 

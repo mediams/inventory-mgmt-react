@@ -10,6 +10,9 @@ import ProductPage from "./pages/ProductPage";
 import AddEditProductPage from "./pages/AddEditProductPage";
 import PurchasePage from "./pages/PurchasePage";
 import SellPage from "./pages/SellPage";
+import TransactionsPage from "./pages/TransactionsPage";
+import TransactionDetailsPage from "./pages/TransactionDetailsPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -31,6 +34,13 @@ function App() {
 
         <Route path="/purchase" element={<AdminRoute element={<PurchasePage />} />} />
         <Route path="/sell" element={<AdminRoute element={<SellPage />} />} />
+
+        <Route path="/transactions" element={<AdminRoute element={<TransactionsPage />} />} />
+        <Route path="/transactions/:transactionId" element={<ProtectedRoute element={<TransactionDetailsPage/>}/>}/>
+
+        <Route path="/profile" element={<ProtectedRoute element={<ProfilePage/>}/>}/>
+
+
 
       </Routes>
     </Router>

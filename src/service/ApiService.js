@@ -296,11 +296,13 @@ export default class ApiService {
         return response.data;
     }
 
-    static async updateTransactionStatus(transactionId, status) {
-        const response = await axios.put(`${this.BASE_URL}/transactions/${transactionId}`, status, {
-            headers: this.getHeader()
-        })
-        return response.data;
+    static async updateTransactionStatus(transactionId, transactionStatus) {
+    const response = await axios.put(
+        `${this.BASE_URL}/transactions/${transactionId}`,
+        { transactionStatus }, // <-- ключ должен совпадать с record-аксессором
+        { headers: this.getHeader() }
+    );
+    return response.data;
     }
 
 
