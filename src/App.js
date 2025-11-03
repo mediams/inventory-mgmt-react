@@ -9,6 +9,7 @@ import AddEditSupplierPage_ from "./pages/AddEditSupplierPage_";
 import ProductPage from "./pages/ProductPage";
 import AddEditProductPage from "./pages/AddEditProductPage";
 import PurchasePage from "./pages/PurchasePage";
+import SellPage from "./pages/SellPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/products" element={<AdminRoute element={<ProductPage />} />} />
 
         <Route path="/purchase" element={<AdminRoute element={<PurchasePage />} />} />
+        <Route path="/sell" element={<AdminRoute element={<SellPage />} />} />
 
       </Routes>
     </Router>
