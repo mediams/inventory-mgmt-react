@@ -13,6 +13,7 @@ import SellPage from "./pages/SellPage";
 import TransactionsPage from "./pages/TransactionsPage";
 import TransactionDetailsPage from "./pages/TransactionDetailsPage";
 import ProfilePage from "./pages/ProfilePage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
   return (
@@ -27,19 +28,22 @@ function App() {
         <Route path="/add-supplier" element={<AdminRoute element={<AddEditSupplierPage_ />} />} />
         <Route path="/edit-supplier/:supplierId" element={<AdminRoute element={<AddEditSupplierPage_ />} />} />
 
-        {/* Продукты */}
         <Route path="/add-products" element={<AdminRoute element={<AddEditProductPage />} />} /> 
         <Route path="/edit-product/:productId" element={<AdminRoute element={<AddEditProductPage />} />} />
         <Route path="/products" element={<AdminRoute element={<ProductPage />} />} />
 
-        <Route path="/purchase" element={<AdminRoute element={<PurchasePage />} />} />
-        <Route path="/sell" element={<AdminRoute element={<SellPage />} />} />
 
-        <Route path="/transactions" element={<AdminRoute element={<TransactionsPage />} />} />
+        {/* ADMIN and MANAGER */}
+        <Route path="/purchase"  element={<ProtectedRoute element={<PurchasePage/>}/>}/>
+        <Route path="/sell" element={<ProtectedRoute element={<SellPage/>}/>}/>
+
+        <Route path="/transactions" element={<ProtectedRoute element={<TransactionsPage/>}/>}/>
         <Route path="/transactions/:transactionId" element={<ProtectedRoute element={<TransactionDetailsPage/>}/>}/>
 
         <Route path="/profile" element={<ProtectedRoute element={<ProfilePage/>}/>}/>
+        <Route path="/dashboard" element={<ProtectedRoute element={<DashboardPage/>}/>}/>
 
+        <Route path="*" element={<LoginPage/>}/>
 
 
       </Routes>
